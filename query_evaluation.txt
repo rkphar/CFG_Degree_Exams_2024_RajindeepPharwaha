@@ -1,0 +1,26 @@
+
+
+SELECT
+	patient_id,
+	COUNT(*) AS admission_count
+FROM
+	admissions
+WHERE
+	department_id = (SELECT department_id FROM departments WHERE department_name = 'Cardiology'
+	OR department_name = NULL)
+	AND admission_date >= '2015-01-01'
+GROUP BY
+	patient_id
+ORDER BY
+	admission_count DESC
+LIMIT 1;
+
+
+For the above code provided, in the WHERE clause, it should read department_name IS NULL and not department_name = NULL
+
+The code also limits the answer to 1 patient. If the LIMIT was set to another number, you could check the top 10 patients or, you could remove the limit to show 
+all the patients depending on what was required at the time.
+
+The WHERE clause could also be changed to:
+WHERE department_id IN (SELECT department_id FROM departments WHERE department_name = 'Cardiology') AND admission_date >= '2015-01-01'
+This will allow for other department ids to be included which may be associated with Cardiology.
