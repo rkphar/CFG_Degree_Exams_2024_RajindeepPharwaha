@@ -1,65 +1,62 @@
-Q1.1 -	A primary key uniquely identifies a column in a table while a foreign key links tables together which have a matching column. 
+Section 1: Theory Questions [25 points] 
 
-	(Reference CFG materials)
+1.1 In your own words, what does the role of a data scientist involve? 
+- The role of a data scientist involves collecting, cleaning and analysing data using advanced statistical techniques and machine learning algorithms and outputting the results in graphs and tables to show patterns, trends and correlations in the data.
 
-Q1.2 -	The 'finally' block is used to finish off a 'try...except...else' block. The 'finally' block will always run, no matter what, even if errors are raised 
-	in the 'try...excdept...else' block. It helps to close objects and clean resources. 
-	
-	(Reference https://www.w3schools.com/python/ref_keyword_finally.asp)
+1.2 What is an outlier? Here we expect to see the following: 
 
-Q1.3 -	The 'commit' command saves changes made to a file to your local repository, while the 'push command transfers the saved files to your remote repository.
+a. Definition
+– An outlier is a data point which is considered as an anomaly as it is either significantly higher or lower than the rest of the data points.
 
-	(Reference CFG materials)
+b. Examples 
+– An example of an outlier could be in a dataset of house prices, where all the houses in an area range between £100,000 and £500,000, but you have a house which has a value of £1,500,000. This would be considered an outlier as the house price is significantly higher than all the other houses in the area. This could be a genuine outlier, or it could be an input error. Another example of an outlier is where you have a list of staff salaries and there is a member of staff who has a significantly higher salary than the rest of the staff. This could be a manager or owner of the business and would be relevant to the dataset.
 
+c. Should outliers always be removed? Why? 
+– Outliers should only be removed when it is deemed necessary to keep the integrity and accuracy of the dataset. Outliers can be very informative to a dataset and may give valuable insights to the data.
 
-Q1.4 -	AccuWeather is a free public API which requires an API key to access the data. It can be used to access a wide range of weather related data from all over
-	the world. This data can be current, historical or a forecast for the days ahead.
-	
-	StarWars API (SWAPI) is a free public API that holds a large amount of data about the Star Wars Universe. This includes information on films, characters,
-	planets, spaceships and programmes.
+d. What are other possible issues that you can find in a dataset? 
+- Other possible issues within a dataset can be incomplete, missing or NaN values. This could be where the information has not been entered by the user or has been entered incorrectly. Differences in data entry can also be an issue where someone may have entered ‘Male’ while someone else has entered ‘male’, meaning the data is not consistent and may show incorrectly when analysing the data. Duplicate values can also be an issue if someone has entered the same data more than once. This can skew results giving incorrect results.
 
-	(Reference https://publicapis.io/)
+1.3 Describe the concepts of data cleaning and data quality. Here we expect to see the following: 
 
-Q1.5 -	The product owner is responsible for:
-	
-	- Setting up the product vision
-	- Handling the product backlog
-	- Providing acceptance criteria
-	- Managing stakeholders
+a. What is data cleaning? 
+- Data cleaning is the process of identifying and correcting errors, inconsistencies, and inaccuracies within a dataset. (reference: What is Data Cleaning? - GeeksforGeeks)
 
-	(Reference https://blog.logrocket.com/product-management/product-owner-role-responsibilities/)
+b. Why is data cleaning important? 
+- Data cleaning is important as it improves the quality of the data making it easier to analyse. It also makes it easier for businesses and organisations to make informed decisions based on the data. 
 
-Q1.6 -	A FULL OUTER JOIN shows all records where there is a match in either table. 
-		
-		SELECT column_name(s)
-		FROM table1
-		FULL OUTER JOIN table2
-		ON table1.column_name = table2.column_name	
+c. What type of mistakes do we expect to commonly see in datasets? 
+- Common mistakes in datasets are duplicate values where the same information has been entered more than once. Inconsistency in upper- and lower-case letters being used. Misspelling words/names leading to more unique values than there are. Missing values within the dataset where no data has been entered.
 
-	An INNER JOIN shows all records which only have matching values in both tables.
+1.4 Discuss what is Unsupervised Learning - Clustering in Machine Learning using an example. Here we expect to see the following: 
 
-		SELECT column_name(s)
-		FROM table1
-		INNER JOIN table2
-		ON table1.column_name = table2.column_name;
+a. Definition. 
+- Unsupervised Learning is where the machine is given unlabelled input data and has to learn what the hidden structure is from the data. The machine then returns the structure, and the data is then classified according to that structure.
+(Reference: CFG course materials)
 
-	(Reference https://www.w3schools.com/sql/sql_join.asp)
+b. When is it used? 
+- Unsupervised Learning is used when you don’t know how to classify the data, and the machine is used to find the classifier for you.
+(Reference: CFG course materials)
 
-Q1.7 -	Mutable data types are objects which can be changed in Python code. 'Lists' and 'Directories' are examples of mutable data types as the data within the list or
-	directory can be changed.
+c. What is a possible real-world application of unsupervised learning? 
+- One possible real-world application of unsupervised learning is a streaming platform monitoring your viewing habits and analysing the data to make recommendations to the viewer of other programmes or films they might like based on previous programmes/films watched. 
 
-	Immutable data types are in-built in Python and cannot be changed once they have been created. 'Ints' and 'Strings' are examples of immutable data types.
+d. What are its main limitations?
+- Limitations of unsupervised learning are that it would take longer for the machine to be trained. The results are often not at accurate as supervised learning. The output is heavily dependent on the model and the machine. It could cost more as it may require human intervention to understand the patterns and correlate them with the domain knowledge.
+(Reference: Pros and Cons of Unsupervised Learning – Pythonista Planet)
 
-	(Reference https://www.geeksforgeeks.org/mutable-vs-immutable-objects-in-python/)
+1.5 Discuss what is Supervised Learning - Classification in Machine Learning using an example. Here we expect to see the following: 
 
-Q1.8 -	The 'Agile'approach is where there are no clear project requirements at the start, or the requirements are likely to change. This approach allows for continous
-	and fast development and improvement.
+a. Definition. 
+- Supervised learning is where a person labels input data with a desired output. The machine is then given labelled training data and has to learn how to label the data before predicting the output for new data based on the learned model.
+(Reference: CFG course materials)
 
-	The 'Waterfall' approach is where there are a clear set of requirements at the very start and an ordered project plan is created which accommodates the requirements.
+b. When is it used? 
+- Supervised Learning is used when you know how to classify data, but you want the machine to do it for you.
+(Reference: CFG course materials)
 
-	Two differences between the 'Agile' and 'Waterfall' approach are flexibility and delivery time. Where the 'Agile' approach is flexible and testing is done at each 
-	stage allowing the product to be released faster, the 'Waterfall' approach is very rigid and is not tested and released until it is working correctly.
+c. What is a possible real-world application of supervised learning? 
+- A possible real-world application of supervised learning is weather forecasting where the machine uses historical and recent weather data to predict further weather forecasts.
 
-	 
-	(Reference CFG materials)
-
+d. What data do we need for it? Is there any processing that needs to be done?
+- For Supervised Learning, the machine is given training data to learn the model and then testing data to check if the model works. This is usually 80% training data and 20% testing data, but can be changed as required.  
